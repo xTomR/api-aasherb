@@ -45,6 +45,7 @@ app.use(passport.session());
 // Routes
 app.use("/auth", require("./routes/auth"));
 app.use("/api/deliveries", require("./routes/deliveries"));
+app.use("/api/addresses", require("./routes/addresses"));
 app.get("/api", (req, res) => {
   res.send("Home page node server");
 });

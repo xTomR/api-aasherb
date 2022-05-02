@@ -8,6 +8,9 @@ const addressSchema = new mongoose.Schema({
   latLng: {
     type: Object,
   },
+  placeId: {
+    type: String,
+  },
 });
 
 const addressModel = mongoose.model("addresses", addressSchema);
