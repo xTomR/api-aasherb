@@ -26,7 +26,7 @@ app.use(express.json());
 // Middlewares
 app.use(morgan("dev"));
 // app.use(helmet());
-app.use(cors({ credentials: true }));
+app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 
 // Passport config
 require("./config/passport")(passport);
