@@ -15,6 +15,13 @@ dotenv.config({ path: "./config/config.env" });
 connectDB();
 
 const app = express();
+app.use(
+  cors({
+    credentials: true,
+    origin: true,
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  })
+);
 
 // Scheduler
 scheduler();
@@ -26,12 +33,6 @@ app.use(express.json());
 // Middlewares
 app.use(morgan("dev"));
 // app.use(helmet());
-app.use(
-  cors({
-    credentials: true,
-    origin: "https://main--fantastic-tartufo-ea633a.netlify.app",
-  })
-);
 
 // Passport config
 require("./config/passport")(passport);
