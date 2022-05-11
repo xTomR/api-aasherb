@@ -13,7 +13,7 @@ router.get("/login", cors(corsOptions), (req, res) => {
     res.json(req.user);
     console.log(req.user);
   } else {
-    res.status(403).json("error");
+    console.log(`error`);
   }
 });
 
