@@ -1,8 +1,14 @@
 const express = require("express");
 const passport = require("passport");
 const router = express.Router();
+const cors = require("cors");
 
-router.get("/login", (req, res) => {
+var corsOptions = {
+  origin: "http://www.aasherb.com/login",
+  credentials: true,
+};
+
+router.get("/login", cors(corsOptions), (req, res) => {
   if (req.user) {
     res.json(req.user);
     console.log(req.user);
