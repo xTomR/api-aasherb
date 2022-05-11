@@ -25,7 +25,6 @@ var corsOptions = {
   },
 };
 
-app.use(cors(corsOptions));
 // Load config
 dotenv.config({ path: "./config/config.env" });
 
@@ -47,6 +46,7 @@ app.use(
     referrerPolicy: { policy: "no-referrer-when-downgrade" },
   })
 );
+app.use(cors(corsOptions));
 
 // Passport config
 require("./config/passport")(passport);
