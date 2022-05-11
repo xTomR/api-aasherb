@@ -21,8 +21,8 @@ router.get("/google", passport.authenticate("google", { scope: ["profile"] }));
 router.get(
   "/google/callback",
   passport.authenticate("google", {
-    successRedirect: `https://main--fantastic-tartufo-ea633a.netlify.app/login/success`,
-    failureRedirect: `https://main--fantastic-tartufo-ea633a.netlify.app/login/failure`,
+    successRedirect: `https://aasherb.netlify.app/login/success`,
+    failureRedirect: `https://aasherb.netlify.app/login/failure`,
     passReqToCallback: true,
   }),
   (req, res) => {
