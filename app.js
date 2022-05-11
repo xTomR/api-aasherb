@@ -9,15 +9,6 @@ const scheduler = require("./schedule/scheduler");
 const middlewares = require("./middlewares/index");
 const cookieSession = require("cookie-session");
 
-let allowCrossDomain = function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://aasherb.netlify.app");
-  res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
-  res.header("Access-Control-Allow-Headers", "Content-Type");
-  res.header("Referrer-Policy", "no-referrer-when-downgrade");
-
-  next();
-};
-
 // Load config
 dotenv.config({ path: "./config/config.env" });
 
@@ -34,8 +25,11 @@ app.use(express.json());
 
 // Middlewares
 app.use(morgan("dev"));
-// app.use(helmet());
-app.use(allowCrossDomain);
+app.use(
+  helmet({
+    referrerPolicy: { policy: "no-referrer" },
+  })
+);
 
 // Passport config
 require("./config/passport")(passport);
