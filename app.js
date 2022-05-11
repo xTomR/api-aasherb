@@ -35,12 +35,12 @@ app.use(express.json());
 
 // Middlewares
 app.use(morgan("dev"));
-// app.use(
-//   helmet({
-//     referrerPolicy: { policy: "no-referrer" },
-//     crossOri
-//   })
-// );
+app.use(
+  helmet({
+    referrerPolicy: { policy: "no-referrer-when-downgrade" },
+    crossOri,
+  })
+);
 app.use(
   helmet.referrerPolicy({
     policy: "unsafe-url",
