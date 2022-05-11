@@ -9,20 +9,20 @@ const scheduler = require("./schedule/scheduler");
 const middlewares = require("./middlewares/index");
 const cookieSession = require("cookie-session");
 
+let allowCrossDomain = function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "example.com");
+  res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
+  res.header("Access-Control-Allow-Headers", "Content-Type");
+
+  next();
+};
+
 // Load config
 dotenv.config({ path: "./config/config.env" });
 
 connectDB();
 
 const app = express();
-app.use(
-  "*",
-  cors({
-    credentials: true,
-    origin: true,
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  })
-);
 
 // Scheduler
 scheduler();
@@ -34,6 +34,7 @@ app.use(express.json());
 // Middlewares
 app.use(morgan("dev"));
 // app.use(helmet());
+app.use(allowCrossDomain);
 
 // Passport config
 require("./config/passport")(passport);
