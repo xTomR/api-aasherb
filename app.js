@@ -1,6 +1,6 @@
 const express = require("express");
 const morgan = require("morgan");
-import * as helmet from "helmet";
+const helmet = require("helmet");
 const cors = require("cors");
 const passport = require("passport");
 const dotenv = require("dotenv");
