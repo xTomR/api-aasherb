@@ -14,7 +14,7 @@
   ],
   "headers": [
     {
-      "source": "http://localhost:3000",
+      "source": "https://main--fantastic-tartufo-ea633a.netlify.app",
       "headers": [
         { "key": "Access-Control-Allow-Credentials", "value": "true" },
         { "key": "Access-Control-Allow-Origin", "value": "*" },

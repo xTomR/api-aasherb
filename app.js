@@ -26,7 +26,12 @@ app.use(express.json());
 // Middlewares
 app.use(morgan("dev"));
 // app.use(helmet());
-app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+app.use(
+  cors({
+    credentials: true,
+    origin: "https://main--fantastic-tartufo-ea633a.netlify.app",
+  })
+);
 
 // Passport config
 require("./config/passport")(passport);
