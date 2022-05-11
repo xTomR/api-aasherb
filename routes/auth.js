@@ -6,7 +6,7 @@ router.get("/login", (req, res) => {
   if (req.user) {
     res.json(req.user);
   } else {
-    res.status(403).json("error");
+    res.status(405).json("error");
   }
 });
 
