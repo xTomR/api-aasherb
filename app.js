@@ -18,7 +18,7 @@ const app = express();
 app.use(
   cors({
     credentials: true,
-    origin: "https://aasherb.netlify.app/",
+    origin: true,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   })
 );
