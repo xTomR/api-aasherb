@@ -16,7 +16,7 @@ connectDB();
 
 const app = express();
 app.all("*", function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://aasherb.com");
+  res.header("Access-Control-Allow-Origin", "http://aasherb.com");
   res.header("Access-Control-Allow-Credentials", "true");
   res.header("Access-Control-Allow-Methods", "PUT, GET, POST, DELETE, OPTIONS");
   res.header(
