@@ -10,9 +10,9 @@ const middlewares = require("./middlewares/index");
 const cookieSession = require("cookie-session");
 
 let whitelist = [
+  "http://www.aasherb.com/login",
   "http://www.aasherb.com",
   "https://www.aasherb.com",
-  "http://www.aasherb.com/login",
   "https://www.aasherb.com/login",
   "https://api.aasherb.com",
 ];
