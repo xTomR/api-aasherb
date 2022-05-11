@@ -3,12 +3,7 @@ const passport = require("passport");
 const router = express.Router();
 const cors = require("cors");
 
-var corsOptions = {
-  origin: true,
-  credentials: true,
-};
-
-router.get("/login", cors(corsOptions), (req, res) => {
+router.get("/login", (req, res) => {
   if (req.user) {
     res.json(req.user);
     console.log(req.user);

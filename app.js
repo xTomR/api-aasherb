@@ -30,7 +30,7 @@ app.use(
     referrerPolicy: { policy: "no-referrer-when-downgrade" },
   })
 );
-var corsOptions = {
+let corsOptions = {
   origin: true,
   credentials: true,
 };
