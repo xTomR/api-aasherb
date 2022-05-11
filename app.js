@@ -30,6 +30,11 @@ app.use(
     referrerPolicy: { policy: "no-referrer-when-downgrade" },
   })
 );
+var corsOptions = {
+  origin: true,
+  credentials: true,
+};
+app.use(cors(corsOptions));
 
 // Passport config
 require("./config/passport")(passport);
