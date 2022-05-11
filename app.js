@@ -23,7 +23,7 @@ var corsOptions = {
       callback(new Error("Not allowed by CORS"));
     }
   },
-  withCredentials: true,
+  credentials: true,
 };
 
 // Load config
