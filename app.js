@@ -9,11 +9,6 @@ const scheduler = require("./schedule/scheduler");
 const middlewares = require("./middlewares/index");
 const cookieSession = require("cookie-session");
 
-var corsOptions = {
-  origin: "http://www.aasherb.com/login",
-  credentials: true,
-};
-
 // Load config
 dotenv.config({ path: "./config/config.env" });
 
