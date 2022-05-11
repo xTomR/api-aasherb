@@ -22,7 +22,7 @@ module.exports = function (passport) {
         if (user) {
           done(null, user);
         } else {
-          // await User.create(newUser);
+          await User.create(newUser);
           done(null, user);
         }
       }
