@@ -15,16 +15,6 @@ dotenv.config({ path: "./config/config.env" });
 connectDB();
 
 const app = express();
-app.all("*", function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://www.aasherb.com");
-  res.header("Access-Control-Allow-Credentials", "true");
-  res.header("Access-Control-Allow-Methods", "PUT, GET, POST, DELETE, OPTIONS");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-  );
-  next();
-});
 
 // Scheduler
 scheduler();
@@ -38,11 +28,6 @@ app.use(morgan("dev"));
 app.use(
   helmet({
     referrerPolicy: { policy: "no-referrer-when-downgrade" },
-  })
-);
-app.use(
-  helmet.referrerPolicy({
-    policy: "unsafe-url",
   })
 );
 
