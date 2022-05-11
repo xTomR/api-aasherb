@@ -47,7 +47,6 @@ app.use(
     referrerPolicy: { policy: "no-referrer-when-downgrade" },
   })
 );
-app.use(cors(corsOptions));
 
 // Passport config
 require("./config/passport")(passport);
@@ -64,7 +63,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Routes
-app.use("/auth", require("./routes/auth"));
+app.use("/auth", cors(corsOptions), require("./routes/auth"));
 app.use("/api/deliveries", require("./routes/deliveries"));
 app.use("/api/addresses", require("./routes/addresses"));
 app.get("/api", (req, res) => {
