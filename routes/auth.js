@@ -4,7 +4,7 @@ const router = express.Router();
 const cors = require("cors");
 
 var corsOptions = {
-  origin: "https://www.aasherb.com",
+  origin: true,
   credentials: true,
 };
 

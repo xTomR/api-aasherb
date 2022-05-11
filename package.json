@@ -3,7 +3,6 @@
   "version": "0.9.1",
   "description": "Groupe A&A Sherbrooke API express.",
   "main": "index.js",
-  "proxy": "http://localhost:3000/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
