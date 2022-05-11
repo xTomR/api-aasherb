@@ -25,11 +25,12 @@ app.use(express.json());
 
 // Middlewares
 app.use(morgan("dev"));
-app.use(
-  helmet({
-    referrerPolicy: { policy: "no-referrer" },
-  })
-);
+// app.use(
+//   helmet({
+//     referrerPolicy: { policy: "no-referrer" },
+//     crossOri
+//   })
+// );
 
 // Passport config
 require("./config/passport")(passport);
