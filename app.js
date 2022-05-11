@@ -9,6 +9,23 @@ const scheduler = require("./schedule/scheduler");
 const middlewares = require("./middlewares/index");
 const cookieSession = require("cookie-session");
 
+let whitelist = [
+  "http://www.aasherb.com",
+  "https://www.aasherb.com",
+  "http://www.aasherb.com/login",
+  "https://www.aasherb.com/login",
+];
+var corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+};
+
+app.use(cors(corsOptions));
 // Load config
 dotenv.config({ path: "./config/config.env" });
 
