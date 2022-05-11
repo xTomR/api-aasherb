@@ -9,13 +9,7 @@ const scheduler = require("./schedule/scheduler");
 const middlewares = require("./middlewares/index");
 const cookieSession = require("cookie-session");
 
-let whitelist = [
-  "http://www.aasherb.com/login",
-  "http://www.aasherb.com",
-  "https://www.aasherb.com",
-  "https://www.aasherb.com/login",
-  "https://api.aasherb.com",
-];
+let whitelist = ["*"];
 var corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
