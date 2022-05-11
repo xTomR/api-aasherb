@@ -38,7 +38,6 @@ app.use(morgan("dev"));
 app.use(
   helmet({
     referrerPolicy: { policy: "no-referrer-when-downgrade" },
-    crossOri,
   })
 );
 app.use(
