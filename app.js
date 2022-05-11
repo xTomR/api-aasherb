@@ -1,6 +1,6 @@
 const express = require("express");
 const morgan = require("morgan");
-const helmet = require("helmet");
+import * as helmet from "helmet";
 const cors = require("cors");
 const passport = require("passport");
 const dotenv = require("dotenv");
@@ -31,6 +31,11 @@ app.use(morgan("dev"));
 //     crossOri
 //   })
 // );
+app.use(
+  helmet.referrerPolicy({
+    policy: "no-referrer",
+  })
+);
 
 // Passport config
 require("./config/passport")(passport);
