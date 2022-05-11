@@ -14,6 +14,7 @@ let whitelist = [
   "https://www.aasherb.com",
   "http://www.aasherb.com/login",
   "https://www.aasherb.com/login",
+  "https://api.aasherb.com",
 ];
 var corsOptions = {
   origin: function (origin, callback) {
