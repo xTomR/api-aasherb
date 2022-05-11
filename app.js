@@ -9,15 +9,8 @@ const scheduler = require("./schedule/scheduler");
 const middlewares = require("./middlewares/index");
 const cookieSession = require("cookie-session");
 
-let whitelist = ["*"];
 var corsOptions = {
-  origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
+  origin: "*",
   credentials: true,
 };
 
