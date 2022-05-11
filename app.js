@@ -43,7 +43,7 @@ app.use(morgan("dev"));
 // );
 app.use(
   helmet.referrerPolicy({
-    policy: "no-referrer",
+    policy: "unsafe-url",
   })
 );
 
