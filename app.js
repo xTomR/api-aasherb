@@ -36,7 +36,7 @@ let corsOptions = {
   ],
   credentials: true,
 };
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 // Passport config
 require("./config/passport")(passport);
