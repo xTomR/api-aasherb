@@ -25,11 +25,7 @@ app.use(express.json());
 
 // Middlewares
 app.use(morgan("dev"));
-app.use(
-  helmet({
-    referrerPolicy: { policy: "no-referrer-when-downgrade" },
-  })
-);
+app.use(helmet());
 let corsOptions = {
   origin: true,
   credentials: true,
