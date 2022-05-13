@@ -26,16 +26,7 @@ app.use(express.json());
 // Middlewares
 app.use(morgan("dev"));
 // app.use(helmet());
-let corsOptions = {
-  origin: [
-    "https://www.aasherb.com",
-    "https://www.aasherb.com/home",
-    "https://www.aasherb.com/login",
-    "https://www.aasherb.com/login/sucess",
-    "https://www.aasherb.com/login/failure",
-  ],
-  credentials: true,
-};
+
 // app.use(cors(corsOptions));
 
 // Passport config
@@ -53,7 +44,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Routes
-app.use("/auth", cors(corsOptions), require("./routes/auth"));
+app.use("/auth", require("./routes/auth"));
 app.use("/api/deliveries", require("./routes/deliveries"));
 app.use("/api/addresses", require("./routes/addresses"));
 app.get("/api", (req, res) => {

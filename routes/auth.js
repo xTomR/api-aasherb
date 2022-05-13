@@ -2,8 +2,18 @@ const express = require("express");
 const passport = require("passport");
 const router = express.Router();
 const cors = require("cors");
+let corsOptions = {
+  origin: [
+    "https://www.aasherb.com",
+    "https://www.aasherb.com/home",
+    "https://www.aasherb.com/login",
+    "https://www.aasherb.com/login/sucess",
+    "https://www.aasherb.com/login/failure",
+  ],
+  credentials: true,
+};
 
-router.get("/login", (req, res) => {
+router.get("/login", cors(corsOptions), (req, res) => {
   if (req.user) {
     res.json(req.user);
     console.log(req.user);
@@ -12,7 +22,7 @@ router.get("/login", (req, res) => {
   }
 });
 
-router.get("/logout", (req, res) => {
+router.get("/logout", cors(corsOptions), (req, res) => {
   req.session = null;
   res.send("done");
 });
