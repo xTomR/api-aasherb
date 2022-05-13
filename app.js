@@ -27,7 +27,13 @@ app.use(express.json());
 app.use(morgan("dev"));
 app.use(helmet());
 let corsOptions = {
-  origin: true,
+  origin: [
+    "https://www.aasherb.com",
+    "https://www.aasherb.com/home",
+    "https://www.aasherb.com/login",
+    "https://www.aasherb.com/login/sucess",
+    "https://www.aasherb.com/login/failure",
+  ],
   credentials: true,
 };
 app.use(cors(corsOptions));
