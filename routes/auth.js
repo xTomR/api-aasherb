@@ -27,10 +27,15 @@ router.get("/logout", cors(corsOptions), (req, res) => {
   res.send("done");
 });
 
-router.get("/google", passport.authenticate("google", { scope: ["profile"] }));
+router.get(
+  "/google",
+  cors(corsOptions),
+  passport.authenticate("google", { scope: ["profile"] })
+);
 
 router.get(
   "/google/callback",
+  cors(corsOptions),
   passport.authenticate("google", {
     successRedirect: `https://www.aasherb.com/login/success`,
     failureRedirect: `https://www.aasherb.com/login/failure`,
@@ -40,7 +45,7 @@ router.get(
     res.send(req.user);
   }
 );
-router.get("/user", (req, res) => {
+router.get("/user", cors(corsOptions), (req, res) => {
   res.send(req.user);
 });
 
