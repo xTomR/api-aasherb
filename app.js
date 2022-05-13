@@ -25,7 +25,7 @@ app.use(express.json());
 
 // Middlewares
 app.use(morgan("dev"));
-app.use(helmet());
+// app.use(helmet());
 let corsOptions = {
   origin: [
     "https://www.aasherb.com",
