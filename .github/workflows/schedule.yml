@@ -9,4 +9,4 @@ jobs:
       - name: Call our API route
         run: |
           curl --request GET \
-          --url 'https://api.aasherb.com/api/fetchinfo' \
+          --url 'https://api.aasherb.com/api/fetchinfo'
