@@ -1,10 +1,10 @@
 const express = require("express");
-const helmet = require("helmet");
-const cors = require("cors");
+// const helmet = require("helmet");
+// const cors = require("cors");
 const passport = require("passport");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
-const scheduler = require("./schedule/scheduler");
+// const scheduler = require("./schedule/scheduler");
 const middlewares = require("./middlewares/index");
 const cookieSession = require("cookie-session");
 
