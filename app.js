@@ -1,6 +1,5 @@
 const express = require("express");
 const helmet = require("helmet");
-const cors = require("cors");
 const passport = require("passport");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
@@ -24,8 +23,6 @@ app.use(express.json());
 
 // Middlewares
 // app.use(helmet());
-
-app.use(cors(corsOptions));
 
 // Passport config
 require("./config/passport")(passport);
