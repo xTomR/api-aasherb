@@ -10,7 +10,7 @@ let corsOptions = {
     "https://www.aasherb.com/login/success",
     "https://www.aasherb.com/login/failure",
   ],
-  credentials: true,
+  // credentials: true,
 };
 
 router.get("/login", cors(corsOptions), (req, res) => {
