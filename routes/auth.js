@@ -7,7 +7,7 @@ let corsOptions = {
     "https://www.aasherb.com",
     "https://www.aasherb.com/home",
     "https://www.aasherb.com/login",
-    "https://www.aasherb.com/login/sucess",
+    "https://www.aasherb.com/login/success",
     "https://www.aasherb.com/login/failure",
   ],
   credentials: true,

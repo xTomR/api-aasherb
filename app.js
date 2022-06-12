@@ -1,10 +1,10 @@
 const express = require("express");
-// const helmet = require("helmet");
-// const cors = require("cors");
+const helmet = require("helmet");
+const cors = require("cors");
 const passport = require("passport");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
-// const scheduler = require("./schedule/scheduler");
+const scheduler = require("./schedule/scheduler");
 const middlewares = require("./middlewares/index");
 const cookieSession = require("cookie-session");
 
@@ -15,8 +15,8 @@ connectDB();
 
 const app = express();
 
-// Scheduler
-// scheduler();
+Scheduler;
+scheduler();
 
 // Body parser
 app.use(express.urlencoded({ extended: false }));
@@ -25,7 +25,7 @@ app.use(express.json());
 // Middlewares
 // app.use(helmet());
 
-// app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
 // Passport config
 require("./config/passport")(passport);
