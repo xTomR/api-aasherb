@@ -15,7 +15,7 @@ connectDB();
 
 const app = express();
 
-Scheduler;
+// Scheduler
 scheduler();
 
 // Body parser
