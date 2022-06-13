@@ -3,14 +3,15 @@ const passport = require("passport");
 const router = express.Router();
 const cors = require("cors");
 let corsOptions = {
-  origin: [
-    "https://www.aasherb.com",
-    "https://www.aasherb.com/home",
-    "https://www.aasherb.com/login",
-    "https://www.aasherb.com/login/success",
-    "https://www.aasherb.com/login/failure",
-  ],
-  // credentials: true,
+  // origin: [
+  //   "https://www.aasherb.com",
+  //   "https://www.aasherb.com/home",
+  //   "https://www.aasherb.com/login",
+  //   "https://www.aasherb.com/login/success",
+  //   "https://www.aasherb.com/login/failure",
+  // ],
+  origin: true,
+  credentials: true,
 };
 
 router.get("/login", cors(corsOptions), (req, res) => {
