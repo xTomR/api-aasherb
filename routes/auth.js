@@ -20,7 +20,7 @@ router.get("/login", cors(corsOptions), (req, res) => {
   // } else {
   //   console.log(`error`);
   // }
-  res.send(req);
+  res.send(req.user);
 });
 
 router.get("/logout", cors(corsOptions), (req, res) => {
