@@ -18,6 +18,7 @@ const scheduler = () => {
             if (err) {
               console.log(err);
             } else {
+              console.log(result);
             }
           });
         },
